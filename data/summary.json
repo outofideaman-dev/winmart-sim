@@ -1,0 +1,61 @@
+{
+  "version": "6.1",
+  "auditDate": "2026-11-04",
+  "coreSHA256": "092e26615ddbd3ddeea5111bfb7da0e61ca8824724058b3bad422217eb5c4180",
+  "layout": {
+    "indoorAreaM2": 5000,
+    "rackZoneAreaM2": 3200,
+    "aisles": 14,
+    "rackLevels": 3,
+    "levelHeightsM": [0.15, 1.95, 3.75],
+    "theoreticalSlots": 1764,
+    "operatingCapacityFactor": 0.85,
+    "operatingSlots": 1499,
+    "inboundDocks": 6,
+    "outboundDocks": 12,
+    "separatedTwoWayCorridors": {
+      "palletRobotsY": [3.4, 11.6],
+      "reachTrucksY": [20.2, 47.8]
+    }
+  },
+  "budget": {
+    "currency": "trieu_VND",
+    "base": 4757.0,
+    "reserveRate": 0.2,
+    "reserve": 951.4,
+    "totalPreTax": 5708.4,
+    "robotUnit": 250.0,
+    "robotTotal": 1000.0,
+    "dockEdgeAndMarkersD1": 104.0,
+    "dockWheelLocksAndInterlocksD2": 300.0,
+    "chargersC1": 180.0,
+    "cashWeights": [0.05, 0.15, 0.5, 0.2, 0.05, 0.05],
+    "cashSchedule": [237.85, 713.55, 2378.5, 951.4, 237.85, 237.85],
+    "annualMaintenanceOpex": 155.0,
+    "shiftCycleLaborOpex": 8.56,
+    "dockAssumption": "Leased grade-A warehouse already includes compliant mechanical dock levelers; CAPEX covers D1 edge standardization & optical markers (13 docks) and D2 automatic wheel restraints, signal lights & safety interlocks (12 outbound docks)."
+  },
+  "scheduleAndTeam": {
+    "criticalPathDays": 135,
+    "projectPersonDays": 339,
+    "fteByMilestone": [1.5, 2.32, 2.47, 2.66, 3.4, 2.8],
+    "studentMembers": 6
+  },
+  "verification": {
+    "unitAndInvariantSuitesPassed": "17/17",
+    "simulationScenariosCompleted": 10,
+    "baselineOutbound8hDepartedPallets": 202,
+    "baselineOutbound8hDepartedTrips": 51,
+    "inbound8hStoredPallets": 128,
+    "multiShift40hDepartedPallets": 433,
+    "workbookFormulaErrors": 0,
+    "sensitivityDelta50MPerRobot": 240.0,
+    "plantumlSyntaxValidated": "5/5 HTTP 200 SVG",
+    "wordReport": {
+      "file": "Bao_cao_WinMart_Theo_mau_hoc_phan_V6_1.docx",
+      "embeddedPngFigures": 13,
+      "plantumlPlaceholders": 0,
+      "tables": 28
+    }
+  }
+}

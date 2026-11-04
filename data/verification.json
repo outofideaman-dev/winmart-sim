@@ -1,0 +1,72 @@
+{
+  "checks": [
+    {
+      "name": "Hình học 5.000 m² và kệ 3 tầng 1.764 vị trí, hai vùng 7 lối",
+      "passed": true
+    },
+    {
+      "name": "Ca nhập có 4 ô hữu hạn và dỡ tuần tự từng xe nhập tại dock",
+      "passed": true
+    },
+    {
+      "name": "20 ô trung gian đầy chặn đặt chỗ mới, không mất pallet",
+      "passed": true
+    },
+    {
+      "name": "Sáu xe nâng có thể chạy đồng thời ở sáu lối khác nhau",
+      "passed": true
+    },
+    {
+      "name": "Hỗ trợ chéo A⇄B kích hoạt khi vùng đích quá tải và vùng kia rảnh",
+      "passed": true
+    },
+    {
+      "name": "Xung đột cùng lối bị chặn, không cho vượt hoặc ngược chiều",
+      "passed": true
+    },
+    {
+      "name": "Bốn đội ghép đồng thời và ô hoàn tất chiếm chỗ đến khi robot lấy",
+      "passed": true
+    },
+    {
+      "name": "Ưu tiên nguồn sẵn, giải phóng nguồn 15 kiện và chống đói bằng tuổi đơn",
+      "passed": true
+    },
+    {
+      "name": "Trả dở giữ mã lô hạn dùng và số kiện, chọn xe theo ETA",
+      "passed": true
+    },
+    {
+      "name": "Xe chưa đến hoặc quá tải không được nhận đặt chỗ",
+      "passed": true
+    },
+    {
+      "name": "Xếp hàng đồng thời nhiều xe trên dải 12 dock xuất và nối chuyến không phải về bến",
+      "passed": true
+    },
+    {
+      "name": "Lỗi trong thùng giữ xe, vị trí và hàng; phục hồi mới hoàn tất",
+      "passed": true
+    },
+    {
+      "name": "Chuyển ca không xóa hàng, thời gian ghi riêng và không cộng vét",
+      "passed": true
+    },
+    {
+      "name": "Ca xuất không nhập bù, đi trực tiếp và qua chờ xuất, thứ tự chất từ sâu ra cửa",
+      "passed": true
+    },
+    {
+      "name": "Ảnh chụp theo giờ không đổi khi tồn các ca sau thay đổi",
+      "passed": true
+    },
+    {
+      "name": "Lỗi trên cầu giữ xe và không dịch chuyển bước nhiệm vụ",
+      "passed": true
+    },
+    {
+      "name": "Chính sách 2–2 là ưu tiên, xe rảnh hỗ trợ luồng còn lại",
+      "passed": true
+    }
+  ]
+}
