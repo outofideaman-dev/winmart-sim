@@ -1,72 +1,97 @@
 {
+  "version": "6.2",
+  "generatedAt": "2026-11-05T08:55:38.770Z",
+  "totalChecks": 8,
+  "passedChecks": 8,
   "checks": [
     {
-      "name": "Hình học 5.000 m² và kệ 3 tầng 1.764 vị trí, hai vùng 7 lối",
-      "passed": true
+      "id": "V62-GEO-01",
+      "name": "Hình học thống nhất 5.000 m², 1.764 ô kệ tách tọa độ vật lý/điểm lấy và kiểm chứng bao hình OBB",
+      "passed": true,
+      "wallMs": 1.9,
+      "details": {
+        "slots": 1764,
+        "rearY": 46.8,
+        "rtHomeY": 49
+      }
     },
     {
-      "name": "Ca nhập có 4 ô hữu hạn và dỡ tuần tự từng xe nhập tại dock",
-      "passed": true
+      "id": "V62-XLS-02",
+      "name": "Bộ kiểm tra Excel 6 sheet ca xuất: mẫu chuẩn 0 lỗi, chặn ERROR cứng và cảnh báo WARNING thiếu tồn",
+      "passed": true,
+      "wallMs": 211.4,
+      "details": {
+        "stdOrders": 66,
+        "fullOrders": 150,
+        "blockedErrors": 6,
+        "shortageWarnings": 1
+      }
     },
     {
-      "name": "20 ô trung gian đầy chặn đặt chỗ mới, không mất pallet",
-      "passed": true
+      "id": "V62-FLT-03",
+      "name": "Sự cố xe rảnh và xe đang đi rỗng: không đóng băng toàn cục, tự động thu hồi và giao lại lệnh cho xe khỏe",
+      "passed": true,
+      "wallMs": 104.4,
+      "details": {
+        "reassignedTasks": 1,
+        "newAssignee": "XN1"
+      }
     },
     {
-      "name": "Sáu xe nâng có thể chạy đồng thời ở sáu lối khác nhau",
-      "passed": true
+      "id": "V62-FLT-04",
+      "name": "Sự cố xe đang chở pallet ở tầm thấp: xác nhận cứu hộ F3, hạ chuyển pallet sang ô đệm và kéo 0,20 m/s về MAINT",
+      "passed": true,
+      "wallMs": 644.3,
+      "details": {
+        "rescuedRobot": "CP3",
+        "palletId": "PL453",
+        "palletNewLoc": "TR4_0"
+      }
     },
     {
-      "name": "Hỗ trợ chéo A⇄B kích hoạt khi vùng đích quá tải và vùng kia rảnh",
-      "passed": true
+      "id": "V62-FLT-05",
+      "name": "Sự cố nâng cao tầng 2–3 khóa lối cục bộ (chờ kỹ thuật hạ tải) và sự cố tại ô ghép chỉ cô lập 1 bàn ghép",
+      "passed": true,
+      "wallMs": 738.6,
+      "details": {
+        "highLiftRobot": "XN2",
+        "isolatedAisle": 3,
+        "isolatedCell": 1,
+        "assembledByHealthyCells": 1
+      }
     },
     {
-      "name": "Xung đột cùng lối bị chặn, không cho vượt hoặc ngược chiều",
-      "passed": true
+      "id": "V62-FLT-06",
+      "name": "Đi vòng hành lang khi nghẽn đơn, chờ đường WAITING_PATH khi nghẽn kép và giữ khóa an toàn trong thùng xe tải",
+      "passed": true,
+      "wallMs": 2343.3,
+      "details": {
+        "detours": 8,
+        "dockSafetyLatenessSec": 61
+      }
     },
     {
-      "name": "Bốn đội ghép đồng thời và ô hoàn tất chiếm chỗ đến khi robot lấy",
-      "passed": true
+      "id": "V62-OPS-07",
+      "name": "Ghép hàng nhiều đợt (>2 pallet nguồn), bắt buộc qua kiểm đếm–quấn màng QC và bảo toàn không tách đơn",
+      "passed": true,
+      "wallMs": 12699.6,
+      "details": {
+        "shippedOrders": 66,
+        "multiWavePallets": 13,
+        "qcPassed": 69,
+        "departedPallets": 81
+      }
     },
     {
-      "name": "Ưu tiên nguồn sẵn, giải phóng nguồn 15 kiện và chống đói bằng tuổi đơn",
-      "passed": true
-    },
-    {
-      "name": "Trả dở giữ mã lô hạn dùng và số kiện, chọn xe theo ETA",
-      "passed": true
-    },
-    {
-      "name": "Xe chưa đến hoặc quá tải không được nhận đặt chỗ",
-      "passed": true
-    },
-    {
-      "name": "Xếp hàng đồng thời nhiều xe trên dải 12 dock xuất và nối chuyến không phải về bến",
-      "passed": true
-    },
-    {
-      "name": "Lỗi trong thùng giữ xe, vị trí và hàng; phục hồi mới hoàn tất",
-      "passed": true
-    },
-    {
-      "name": "Chuyển ca không xóa hàng, thời gian ghi riêng và không cộng vét",
-      "passed": true
-    },
-    {
-      "name": "Ca xuất không nhập bù, đi trực tiếp và qua chờ xuất, thứ tự chất từ sâu ra cửa",
-      "passed": true
-    },
-    {
-      "name": "Ảnh chụp theo giờ không đổi khi tồn các ca sau thay đổi",
-      "passed": true
-    },
-    {
-      "name": "Lỗi trên cầu giữ xe và không dịch chuyển bước nhiệm vụ",
-      "passed": true
-    },
-    {
-      "name": "Chính sách 2–2 là ưu tiên, xe rảnh hỗ trợ luồng còn lại",
-      "passed": true
+      "id": "V62-DET-08",
+      "name": "Sạc cân bằng từ 15% pin theo vùng/nhóm xe, bảo toàn bất biến và tính tất định mã băm SHA-256",
+      "passed": true,
+      "wallMs": 12217,
+      "details": {
+        "hash": "eef6f349c663a96f",
+        "cpCharged": 3,
+        "xnCharged": 3
+      }
     }
   ]
 }

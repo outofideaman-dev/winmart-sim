@@ -1,0 +1,3457 @@
+{
+  "rule": "Lead seconds = 7200 whole / 10800 mixed <=2 source lines / 14400 mixed >2 source lines, plus 1200 per extra pallet; due = max(old due, min(28800, release + lead)); unchanged trip schedule.",
+  "componentsMinutes": {
+    "whole": [
+      15,
+      30,
+      75
+    ],
+    "mixed": [
+      30,
+      60,
+      90
+    ],
+    "multiSource": [
+      50,
+      100,
+      90
+    ]
+  },
+  "scope": "Synthetic initial outbound Excel plans; no real delivery commitments. Same input per comparison pair.",
+  "plans": {
+    "standard": [
+      {
+        "orderId": "ORD-001",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 0,
+        "originalDueSec": 3000,
+        "dueSec": 7200,
+        "leadSec": 7200,
+        "adjustmentSec": 4200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-01",
+          "TRIP-R01-02"
+        ]
+      },
+      {
+        "orderId": "ORD-002",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 45,
+        "originalDueSec": 4245,
+        "dueSec": 12045,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-02",
+          "TRIP-R02-03"
+        ]
+      },
+      {
+        "orderId": "ORD-003",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 90,
+        "originalDueSec": 4290,
+        "dueSec": 10890,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-01",
+          "TRIP-R03-02"
+        ]
+      },
+      {
+        "orderId": "ORD-004",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 135,
+        "originalDueSec": 4335,
+        "dueSec": 10935,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-01",
+          "TRIP-R04-02"
+        ]
+      },
+      {
+        "orderId": "ORD-005",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 3,
+        "releaseSec": 180,
+        "originalDueSec": 4380,
+        "dueSec": 16980,
+        "leadSec": 16800,
+        "adjustmentSec": 12600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-02",
+          "TRIP-R05-03",
+          "TRIP-R05-04"
+        ]
+      },
+      {
+        "orderId": "ORD-006",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 225,
+        "originalDueSec": 3225,
+        "dueSec": 11025,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-01",
+          "TRIP-R06-02"
+        ]
+      },
+      {
+        "orderId": "ORD-007",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 0,
+        "originalDueSec": 4200,
+        "dueSec": 12000,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-02",
+          "TRIP-R01-03"
+        ]
+      },
+      {
+        "orderId": "ORD-008",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 45,
+        "originalDueSec": 4245,
+        "dueSec": 7245,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-01",
+          "TRIP-R02-02"
+        ]
+      },
+      {
+        "orderId": "ORD-009",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 90,
+        "originalDueSec": 4290,
+        "dueSec": 10890,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-01",
+          "TRIP-R03-02"
+        ]
+      },
+      {
+        "orderId": "ORD-010",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 135,
+        "originalDueSec": 4335,
+        "dueSec": 10935,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-01",
+          "TRIP-R04-02"
+        ]
+      },
+      {
+        "orderId": "ORD-011",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 180,
+        "originalDueSec": 3180,
+        "dueSec": 10980,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-01",
+          "TRIP-R05-02"
+        ]
+      },
+      {
+        "orderId": "ORD-012",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 225,
+        "originalDueSec": 4425,
+        "dueSec": 12225,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-02",
+          "TRIP-R06-03"
+        ]
+      },
+      {
+        "orderId": "ORD-013",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 0,
+        "originalDueSec": 4200,
+        "dueSec": 10800,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-01",
+          "TRIP-R01-02",
+          "TRIP-R01-03"
+        ]
+      },
+      {
+        "orderId": "ORD-014",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 45,
+        "originalDueSec": 4245,
+        "dueSec": 14445,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-02",
+          "TRIP-R02-03"
+        ]
+      },
+      {
+        "orderId": "ORD-015",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 90,
+        "originalDueSec": 4290,
+        "dueSec": 7290,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-01",
+          "TRIP-R03-02"
+        ]
+      },
+      {
+        "orderId": "ORD-016",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 135,
+        "originalDueSec": 3135,
+        "dueSec": 10935,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-01",
+          "TRIP-R04-02"
+        ]
+      },
+      {
+        "orderId": "ORD-017",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 180,
+        "originalDueSec": 4380,
+        "dueSec": 12180,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-02",
+          "TRIP-R05-03"
+        ]
+      },
+      {
+        "orderId": "ORD-018",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 225,
+        "originalDueSec": 4425,
+        "dueSec": 11025,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-01",
+          "TRIP-R06-02"
+        ]
+      },
+      {
+        "orderId": "ORD-019",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3400,
+        "originalDueSec": 7600,
+        "dueSec": 14200,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-02",
+          "TRIP-R01-03"
+        ]
+      },
+      {
+        "orderId": "ORD-020",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3445,
+        "originalDueSec": 7645,
+        "dueSec": 14245,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-02",
+          "TRIP-R02-03"
+        ]
+      },
+      {
+        "orderId": "ORD-021",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3490,
+        "originalDueSec": 6490,
+        "dueSec": 14290,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-02",
+          "TRIP-R03-03"
+        ]
+      },
+      {
+        "orderId": "ORD-022",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 2,
+        "releaseSec": 3535,
+        "originalDueSec": 7735,
+        "dueSec": 19135,
+        "leadSec": 15600,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-03",
+          "TRIP-R04-04",
+          "TRIP-R04-05"
+        ]
+      },
+      {
+        "orderId": "ORD-023",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 3580,
+        "originalDueSec": 7780,
+        "dueSec": 17980,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-03",
+          "TRIP-R05-04"
+        ]
+      },
+      {
+        "orderId": "ORD-024",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3625,
+        "originalDueSec": 7825,
+        "dueSec": 14425,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-02",
+          "TRIP-R06-03"
+        ]
+      },
+      {
+        "orderId": "ORD-025",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3400,
+        "originalDueSec": 7600,
+        "dueSec": 14200,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-02",
+          "TRIP-R01-03"
+        ]
+      },
+      {
+        "orderId": "ORD-026",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3445,
+        "originalDueSec": 6445,
+        "dueSec": 14245,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-02",
+          "TRIP-R02-03"
+        ]
+      },
+      {
+        "orderId": "ORD-027",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 3490,
+        "originalDueSec": 7690,
+        "dueSec": 15490,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-03",
+          "TRIP-R03-04"
+        ]
+      },
+      {
+        "orderId": "ORD-028",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3535,
+        "originalDueSec": 7735,
+        "dueSec": 14335,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-02",
+          "TRIP-R04-03"
+        ]
+      },
+      {
+        "orderId": "ORD-029",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 3580,
+        "originalDueSec": 7780,
+        "dueSec": 10780,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-02"
+        ]
+      },
+      {
+        "orderId": "ORD-030",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3625,
+        "originalDueSec": 7825,
+        "dueSec": 14425,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-02",
+          "TRIP-R06-03"
+        ]
+      },
+      {
+        "orderId": "ORD-031",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3400,
+        "originalDueSec": 6400,
+        "dueSec": 14200,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-02",
+          "TRIP-R01-03"
+        ]
+      },
+      {
+        "orderId": "ORD-032",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 2,
+        "releaseSec": 3445,
+        "originalDueSec": 7645,
+        "dueSec": 19045,
+        "leadSec": 15600,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-03",
+          "TRIP-R02-04",
+          "TRIP-R02-05"
+        ]
+      },
+      {
+        "orderId": "ORD-033",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3490,
+        "originalDueSec": 7690,
+        "dueSec": 14290,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-02",
+          "TRIP-R03-03"
+        ]
+      },
+      {
+        "orderId": "ORD-034",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3535,
+        "originalDueSec": 7735,
+        "dueSec": 14335,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-02",
+          "TRIP-R04-03"
+        ]
+      },
+      {
+        "orderId": "ORD-035",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 3580,
+        "originalDueSec": 7780,
+        "dueSec": 14380,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-02",
+          "TRIP-R05-03"
+        ]
+      },
+      {
+        "orderId": "ORD-036",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 3625,
+        "originalDueSec": 6625,
+        "dueSec": 10825,
+        "leadSec": 7200,
+        "adjustmentSec": 4200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-02"
+        ]
+      },
+      {
+        "orderId": "ORD-037",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 6800,
+        "originalDueSec": 11000,
+        "dueSec": 18800,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-04",
+          "TRIP-R01-05"
+        ]
+      },
+      {
+        "orderId": "ORD-038",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6845,
+        "originalDueSec": 11045,
+        "dueSec": 17645,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-03",
+          "TRIP-R02-04"
+        ]
+      },
+      {
+        "orderId": "ORD-039",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6890,
+        "originalDueSec": 11090,
+        "dueSec": 17690,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-03",
+          "TRIP-R03-04"
+        ]
+      },
+      {
+        "orderId": "ORD-040",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6935,
+        "originalDueSec": 11135,
+        "dueSec": 17735,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-03",
+          "TRIP-R04-04"
+        ]
+      },
+      {
+        "orderId": "ORD-041",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 6980,
+        "originalDueSec": 9980,
+        "dueSec": 21380,
+        "leadSec": 14400,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-04",
+          "TRIP-R05-05"
+        ]
+      },
+      {
+        "orderId": "ORD-042",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 7025,
+        "originalDueSec": 11225,
+        "dueSec": 19025,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-03",
+          "TRIP-R06-04",
+          "TRIP-R06-05"
+        ]
+      },
+      {
+        "orderId": "ORD-043",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 6800,
+        "originalDueSec": 11000,
+        "dueSec": 14000,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-03"
+        ]
+      },
+      {
+        "orderId": "ORD-044",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6845,
+        "originalDueSec": 11045,
+        "dueSec": 17645,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-03",
+          "TRIP-R02-04"
+        ]
+      },
+      {
+        "orderId": "ORD-045",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6890,
+        "originalDueSec": 11090,
+        "dueSec": 17690,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-03",
+          "TRIP-R03-04"
+        ]
+      },
+      {
+        "orderId": "ORD-046",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6935,
+        "originalDueSec": 9935,
+        "dueSec": 17735,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-03",
+          "TRIP-R04-04"
+        ]
+      },
+      {
+        "orderId": "ORD-047",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 6980,
+        "originalDueSec": 11180,
+        "dueSec": 18980,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-04",
+          "TRIP-R05-05"
+        ]
+      },
+      {
+        "orderId": "ORD-048",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7025,
+        "originalDueSec": 11225,
+        "dueSec": 17825,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-03",
+          "TRIP-R06-04"
+        ]
+      },
+      {
+        "orderId": "ORD-049",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6800,
+        "originalDueSec": 11000,
+        "dueSec": 17600,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-03",
+          "TRIP-R01-04"
+        ]
+      },
+      {
+        "orderId": "ORD-050",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 6845,
+        "originalDueSec": 11045,
+        "dueSec": 14045,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-03"
+        ]
+      },
+      {
+        "orderId": "ORD-051",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6890,
+        "originalDueSec": 9890,
+        "dueSec": 17690,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-03",
+          "TRIP-R03-04"
+        ]
+      },
+      {
+        "orderId": "ORD-052",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 6935,
+        "originalDueSec": 11135,
+        "dueSec": 18935,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-04",
+          "TRIP-R04-05"
+        ]
+      },
+      {
+        "orderId": "ORD-053",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 6980,
+        "originalDueSec": 11180,
+        "dueSec": 17780,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-03",
+          "TRIP-R05-04"
+        ]
+      },
+      {
+        "orderId": "ORD-054",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7025,
+        "originalDueSec": 11225,
+        "dueSec": 17825,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-03",
+          "TRIP-R06-04"
+        ]
+      },
+      {
+        "orderId": "ORD-055",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 10200,
+        "originalDueSec": 14400,
+        "dueSec": 21000,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-04",
+          "TRIP-R01-05"
+        ]
+      },
+      {
+        "orderId": "ORD-056",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 10245,
+        "originalDueSec": 13245,
+        "dueSec": 21045,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-04",
+          "TRIP-R02-05"
+        ]
+      },
+      {
+        "orderId": "ORD-057",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 10290,
+        "originalDueSec": 14490,
+        "dueSec": 22290,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-04",
+          "TRIP-R03-05"
+        ]
+      },
+      {
+        "orderId": "ORD-058",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 10335,
+        "originalDueSec": 14535,
+        "dueSec": 21135,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-04",
+          "TRIP-R04-05"
+        ]
+      },
+      {
+        "orderId": "ORD-059",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 10380,
+        "originalDueSec": 14580,
+        "dueSec": 24780,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-04",
+          "TRIP-R05-05"
+        ]
+      },
+      {
+        "orderId": "ORD-060",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 10425,
+        "originalDueSec": 14625,
+        "dueSec": 21225,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-04",
+          "TRIP-R06-05"
+        ]
+      },
+      {
+        "orderId": "ORD-061",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 10200,
+        "originalDueSec": 13200,
+        "dueSec": 21000,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-04",
+          "TRIP-R01-05"
+        ]
+      },
+      {
+        "orderId": "ORD-062",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 10245,
+        "originalDueSec": 14445,
+        "dueSec": 22245,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-04",
+          "TRIP-R02-05"
+        ]
+      },
+      {
+        "orderId": "ORD-063",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 10290,
+        "originalDueSec": 14490,
+        "dueSec": 21090,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-04",
+          "TRIP-R03-05"
+        ]
+      },
+      {
+        "orderId": "ORD-064",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 10335,
+        "originalDueSec": 14535,
+        "dueSec": 17535,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-04"
+        ]
+      },
+      {
+        "orderId": "ORD-065",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 10380,
+        "originalDueSec": 14580,
+        "dueSec": 21180,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-04",
+          "TRIP-R05-05"
+        ]
+      },
+      {
+        "orderId": "ORD-066",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 10425,
+        "originalDueSec": 13425,
+        "dueSec": 21225,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-04",
+          "TRIP-R06-05"
+        ]
+      }
+    ],
+    "full_8h": [
+      {
+        "orderId": "ORD-001",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 0,
+        "originalDueSec": 3000,
+        "dueSec": 7200,
+        "leadSec": 7200,
+        "adjustmentSec": 4200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-01",
+          "TRIP-R01-02"
+        ]
+      },
+      {
+        "orderId": "ORD-002",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 45,
+        "originalDueSec": 4245,
+        "dueSec": 12045,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-02",
+          "TRIP-R02-03",
+          "TRIP-R02-04"
+        ]
+      },
+      {
+        "orderId": "ORD-003",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 90,
+        "originalDueSec": 4290,
+        "dueSec": 10890,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-01",
+          "TRIP-R03-02",
+          "TRIP-R03-03",
+          "TRIP-R03-04"
+        ]
+      },
+      {
+        "orderId": "ORD-004",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 135,
+        "originalDueSec": 4335,
+        "dueSec": 10935,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-01",
+          "TRIP-R04-02",
+          "TRIP-R04-03",
+          "TRIP-R04-04"
+        ]
+      },
+      {
+        "orderId": "ORD-005",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 3,
+        "releaseSec": 180,
+        "originalDueSec": 4380,
+        "dueSec": 16980,
+        "leadSec": 16800,
+        "adjustmentSec": 12600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-03",
+          "TRIP-R05-04",
+          "TRIP-R05-05",
+          "TRIP-R05-06"
+        ]
+      },
+      {
+        "orderId": "ORD-006",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 225,
+        "originalDueSec": 3225,
+        "dueSec": 11025,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-01",
+          "TRIP-R06-02",
+          "TRIP-R06-03",
+          "TRIP-R06-04"
+        ]
+      },
+      {
+        "orderId": "ORD-007",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 0,
+        "originalDueSec": 4200,
+        "dueSec": 12000,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-02",
+          "TRIP-R01-03",
+          "TRIP-R01-04"
+        ]
+      },
+      {
+        "orderId": "ORD-008",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 45,
+        "originalDueSec": 4245,
+        "dueSec": 7245,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-01",
+          "TRIP-R02-02"
+        ]
+      },
+      {
+        "orderId": "ORD-009",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 90,
+        "originalDueSec": 4290,
+        "dueSec": 10890,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-01",
+          "TRIP-R03-02",
+          "TRIP-R03-03",
+          "TRIP-R03-04"
+        ]
+      },
+      {
+        "orderId": "ORD-010",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 135,
+        "originalDueSec": 4335,
+        "dueSec": 10935,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-01",
+          "TRIP-R04-02",
+          "TRIP-R04-03",
+          "TRIP-R04-04"
+        ]
+      },
+      {
+        "orderId": "ORD-011",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 180,
+        "originalDueSec": 3180,
+        "dueSec": 10980,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-01",
+          "TRIP-R05-02",
+          "TRIP-R05-03",
+          "TRIP-R05-04"
+        ]
+      },
+      {
+        "orderId": "ORD-012",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 225,
+        "originalDueSec": 4425,
+        "dueSec": 12225,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-02",
+          "TRIP-R06-03",
+          "TRIP-R06-04"
+        ]
+      },
+      {
+        "orderId": "ORD-013",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 0,
+        "originalDueSec": 4200,
+        "dueSec": 10800,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-01",
+          "TRIP-R01-02",
+          "TRIP-R01-03",
+          "TRIP-R01-04"
+        ]
+      },
+      {
+        "orderId": "ORD-014",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 45,
+        "originalDueSec": 4245,
+        "dueSec": 14445,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-02",
+          "TRIP-R02-03",
+          "TRIP-R02-04",
+          "TRIP-R02-05"
+        ]
+      },
+      {
+        "orderId": "ORD-015",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 90,
+        "originalDueSec": 4290,
+        "dueSec": 7290,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-01",
+          "TRIP-R03-02"
+        ]
+      },
+      {
+        "orderId": "ORD-016",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 135,
+        "originalDueSec": 3135,
+        "dueSec": 10935,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-01",
+          "TRIP-R04-02",
+          "TRIP-R04-03",
+          "TRIP-R04-04"
+        ]
+      },
+      {
+        "orderId": "ORD-017",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 180,
+        "originalDueSec": 4380,
+        "dueSec": 12180,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-02",
+          "TRIP-R05-03",
+          "TRIP-R05-04"
+        ]
+      },
+      {
+        "orderId": "ORD-018",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 225,
+        "originalDueSec": 4425,
+        "dueSec": 11025,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-01",
+          "TRIP-R06-02",
+          "TRIP-R06-03",
+          "TRIP-R06-04"
+        ]
+      },
+      {
+        "orderId": "ORD-019",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2400,
+        "originalDueSec": 6600,
+        "dueSec": 13200,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-02",
+          "TRIP-R01-03",
+          "TRIP-R01-04",
+          "TRIP-R01-05"
+        ]
+      },
+      {
+        "orderId": "ORD-020",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2445,
+        "originalDueSec": 6645,
+        "dueSec": 13245,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-02",
+          "TRIP-R02-03",
+          "TRIP-R02-04",
+          "TRIP-R02-05"
+        ]
+      },
+      {
+        "orderId": "ORD-021",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2490,
+        "originalDueSec": 5490,
+        "dueSec": 13290,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-02",
+          "TRIP-R03-03",
+          "TRIP-R03-04",
+          "TRIP-R03-05"
+        ]
+      },
+      {
+        "orderId": "ORD-022",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 2,
+        "releaseSec": 2535,
+        "originalDueSec": 6735,
+        "dueSec": 18135,
+        "leadSec": 15600,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-03",
+          "TRIP-R04-04",
+          "TRIP-R04-05",
+          "TRIP-R04-06",
+          "TRIP-R04-07"
+        ]
+      },
+      {
+        "orderId": "ORD-023",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 2580,
+        "originalDueSec": 6780,
+        "dueSec": 16980,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-03",
+          "TRIP-R05-04",
+          "TRIP-R05-05",
+          "TRIP-R05-06"
+        ]
+      },
+      {
+        "orderId": "ORD-024",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2625,
+        "originalDueSec": 6825,
+        "dueSec": 13425,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-02",
+          "TRIP-R06-03",
+          "TRIP-R06-04",
+          "TRIP-R06-05"
+        ]
+      },
+      {
+        "orderId": "ORD-025",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2400,
+        "originalDueSec": 6600,
+        "dueSec": 13200,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-02",
+          "TRIP-R01-03",
+          "TRIP-R01-04",
+          "TRIP-R01-05"
+        ]
+      },
+      {
+        "orderId": "ORD-026",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2445,
+        "originalDueSec": 5445,
+        "dueSec": 13245,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-02",
+          "TRIP-R02-03",
+          "TRIP-R02-04",
+          "TRIP-R02-05"
+        ]
+      },
+      {
+        "orderId": "ORD-027",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 2490,
+        "originalDueSec": 6690,
+        "dueSec": 14490,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-03",
+          "TRIP-R03-04",
+          "TRIP-R03-05"
+        ]
+      },
+      {
+        "orderId": "ORD-028",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2535,
+        "originalDueSec": 6735,
+        "dueSec": 13335,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-02",
+          "TRIP-R04-03",
+          "TRIP-R04-04",
+          "TRIP-R04-05"
+        ]
+      },
+      {
+        "orderId": "ORD-029",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 2580,
+        "originalDueSec": 6780,
+        "dueSec": 9780,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-02",
+          "TRIP-R05-03"
+        ]
+      },
+      {
+        "orderId": "ORD-030",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2625,
+        "originalDueSec": 6825,
+        "dueSec": 13425,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-02",
+          "TRIP-R06-03",
+          "TRIP-R06-04",
+          "TRIP-R06-05"
+        ]
+      },
+      {
+        "orderId": "ORD-031",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2400,
+        "originalDueSec": 5400,
+        "dueSec": 13200,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-02",
+          "TRIP-R01-03",
+          "TRIP-R01-04",
+          "TRIP-R01-05"
+        ]
+      },
+      {
+        "orderId": "ORD-032",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 2,
+        "releaseSec": 2445,
+        "originalDueSec": 6645,
+        "dueSec": 18045,
+        "leadSec": 15600,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-03",
+          "TRIP-R02-04",
+          "TRIP-R02-05",
+          "TRIP-R02-06",
+          "TRIP-R02-07"
+        ]
+      },
+      {
+        "orderId": "ORD-033",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2490,
+        "originalDueSec": 6690,
+        "dueSec": 13290,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-02",
+          "TRIP-R03-03",
+          "TRIP-R03-04",
+          "TRIP-R03-05"
+        ]
+      },
+      {
+        "orderId": "ORD-034",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2535,
+        "originalDueSec": 6735,
+        "dueSec": 13335,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-02",
+          "TRIP-R04-03",
+          "TRIP-R04-04",
+          "TRIP-R04-05"
+        ]
+      },
+      {
+        "orderId": "ORD-035",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 2580,
+        "originalDueSec": 6780,
+        "dueSec": 13380,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-02",
+          "TRIP-R05-03",
+          "TRIP-R05-04",
+          "TRIP-R05-05"
+        ]
+      },
+      {
+        "orderId": "ORD-036",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 2625,
+        "originalDueSec": 5625,
+        "dueSec": 9825,
+        "leadSec": 7200,
+        "adjustmentSec": 4200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-02",
+          "TRIP-R06-03"
+        ]
+      },
+      {
+        "orderId": "ORD-037",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 4800,
+        "originalDueSec": 9000,
+        "dueSec": 16800,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-04",
+          "TRIP-R01-05",
+          "TRIP-R01-06",
+          "TRIP-R01-07"
+        ]
+      },
+      {
+        "orderId": "ORD-038",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4845,
+        "originalDueSec": 9045,
+        "dueSec": 15645,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-03",
+          "TRIP-R02-04",
+          "TRIP-R02-05",
+          "TRIP-R02-06"
+        ]
+      },
+      {
+        "orderId": "ORD-039",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4890,
+        "originalDueSec": 9090,
+        "dueSec": 15690,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-03",
+          "TRIP-R03-04",
+          "TRIP-R03-05",
+          "TRIP-R03-06"
+        ]
+      },
+      {
+        "orderId": "ORD-040",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4935,
+        "originalDueSec": 9135,
+        "dueSec": 15735,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-03",
+          "TRIP-R04-04",
+          "TRIP-R04-05",
+          "TRIP-R04-06"
+        ]
+      },
+      {
+        "orderId": "ORD-041",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 4980,
+        "originalDueSec": 7980,
+        "dueSec": 19380,
+        "leadSec": 14400,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-04",
+          "TRIP-R05-05",
+          "TRIP-R05-06",
+          "TRIP-R05-07"
+        ]
+      },
+      {
+        "orderId": "ORD-042",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 5025,
+        "originalDueSec": 9225,
+        "dueSec": 17025,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-04",
+          "TRIP-R06-05",
+          "TRIP-R06-06"
+        ]
+      },
+      {
+        "orderId": "ORD-043",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 4800,
+        "originalDueSec": 9000,
+        "dueSec": 12000,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-03",
+          "TRIP-R01-04"
+        ]
+      },
+      {
+        "orderId": "ORD-044",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4845,
+        "originalDueSec": 9045,
+        "dueSec": 15645,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-03",
+          "TRIP-R02-04",
+          "TRIP-R02-05",
+          "TRIP-R02-06"
+        ]
+      },
+      {
+        "orderId": "ORD-045",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4890,
+        "originalDueSec": 9090,
+        "dueSec": 15690,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-03",
+          "TRIP-R03-04",
+          "TRIP-R03-05",
+          "TRIP-R03-06"
+        ]
+      },
+      {
+        "orderId": "ORD-046",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4935,
+        "originalDueSec": 7935,
+        "dueSec": 15735,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-03",
+          "TRIP-R04-04",
+          "TRIP-R04-05",
+          "TRIP-R04-06"
+        ]
+      },
+      {
+        "orderId": "ORD-047",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 4980,
+        "originalDueSec": 9180,
+        "dueSec": 16980,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-04",
+          "TRIP-R05-05",
+          "TRIP-R05-06"
+        ]
+      },
+      {
+        "orderId": "ORD-048",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 5025,
+        "originalDueSec": 9225,
+        "dueSec": 15825,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-03",
+          "TRIP-R06-04",
+          "TRIP-R06-05",
+          "TRIP-R06-06"
+        ]
+      },
+      {
+        "orderId": "ORD-049",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4800,
+        "originalDueSec": 9000,
+        "dueSec": 15600,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-04",
+          "TRIP-R01-05",
+          "TRIP-R01-06"
+        ]
+      },
+      {
+        "orderId": "ORD-050",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 4845,
+        "originalDueSec": 9045,
+        "dueSec": 12045,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-03",
+          "TRIP-R02-04"
+        ]
+      },
+      {
+        "orderId": "ORD-051",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4890,
+        "originalDueSec": 7890,
+        "dueSec": 15690,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-03",
+          "TRIP-R03-04",
+          "TRIP-R03-05",
+          "TRIP-R03-06"
+        ]
+      },
+      {
+        "orderId": "ORD-052",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 4935,
+        "originalDueSec": 9135,
+        "dueSec": 16935,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-04",
+          "TRIP-R04-05",
+          "TRIP-R04-06"
+        ]
+      },
+      {
+        "orderId": "ORD-053",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 4980,
+        "originalDueSec": 9180,
+        "dueSec": 15780,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-03",
+          "TRIP-R05-04",
+          "TRIP-R05-05",
+          "TRIP-R05-06"
+        ]
+      },
+      {
+        "orderId": "ORD-054",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 5025,
+        "originalDueSec": 9225,
+        "dueSec": 15825,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-03",
+          "TRIP-R06-04",
+          "TRIP-R06-05",
+          "TRIP-R06-06"
+        ]
+      },
+      {
+        "orderId": "ORD-055",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7200,
+        "originalDueSec": 11400,
+        "dueSec": 18000,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-05",
+          "TRIP-R01-06",
+          "TRIP-R01-07"
+        ]
+      },
+      {
+        "orderId": "ORD-056",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7245,
+        "originalDueSec": 10245,
+        "dueSec": 18045,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-05",
+          "TRIP-R02-06",
+          "TRIP-R02-07"
+        ]
+      },
+      {
+        "orderId": "ORD-057",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 7290,
+        "originalDueSec": 11490,
+        "dueSec": 19290,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-05",
+          "TRIP-R03-06",
+          "TRIP-R03-07"
+        ]
+      },
+      {
+        "orderId": "ORD-058",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7335,
+        "originalDueSec": 11535,
+        "dueSec": 18135,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-04",
+          "TRIP-R04-05",
+          "TRIP-R04-06",
+          "TRIP-R04-07"
+        ]
+      },
+      {
+        "orderId": "ORD-059",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 7380,
+        "originalDueSec": 11580,
+        "dueSec": 21780,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-05",
+          "TRIP-R05-06",
+          "TRIP-R05-07",
+          "TRIP-R05-08"
+        ]
+      },
+      {
+        "orderId": "ORD-060",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7425,
+        "originalDueSec": 11625,
+        "dueSec": 18225,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-04",
+          "TRIP-R06-05",
+          "TRIP-R06-06",
+          "TRIP-R06-07"
+        ]
+      },
+      {
+        "orderId": "ORD-061",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7200,
+        "originalDueSec": 10200,
+        "dueSec": 18000,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-05",
+          "TRIP-R01-06",
+          "TRIP-R01-07"
+        ]
+      },
+      {
+        "orderId": "ORD-062",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 7245,
+        "originalDueSec": 11445,
+        "dueSec": 19245,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-05",
+          "TRIP-R02-06",
+          "TRIP-R02-07",
+          "TRIP-R02-08"
+        ]
+      },
+      {
+        "orderId": "ORD-063",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7290,
+        "originalDueSec": 11490,
+        "dueSec": 18090,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-04",
+          "TRIP-R03-05",
+          "TRIP-R03-06",
+          "TRIP-R03-07"
+        ]
+      },
+      {
+        "orderId": "ORD-064",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 7335,
+        "originalDueSec": 11535,
+        "dueSec": 14535,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-04",
+          "TRIP-R04-05"
+        ]
+      },
+      {
+        "orderId": "ORD-065",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7380,
+        "originalDueSec": 11580,
+        "dueSec": 18180,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-04",
+          "TRIP-R05-05",
+          "TRIP-R05-06",
+          "TRIP-R05-07"
+        ]
+      },
+      {
+        "orderId": "ORD-066",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7425,
+        "originalDueSec": 10425,
+        "dueSec": 18225,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-04",
+          "TRIP-R06-05",
+          "TRIP-R06-06",
+          "TRIP-R06-07"
+        ]
+      },
+      {
+        "orderId": "ORD-067",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 2,
+        "releaseSec": 7200,
+        "originalDueSec": 11400,
+        "dueSec": 22800,
+        "leadSec": 15600,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-06",
+          "TRIP-R01-07",
+          "TRIP-R01-08",
+          "TRIP-R01-09"
+        ]
+      },
+      {
+        "orderId": "ORD-068",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 7245,
+        "originalDueSec": 11445,
+        "dueSec": 21645,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-05",
+          "TRIP-R02-06",
+          "TRIP-R02-07",
+          "TRIP-R02-08",
+          "TRIP-R02-09"
+        ]
+      },
+      {
+        "orderId": "ORD-069",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7290,
+        "originalDueSec": 11490,
+        "dueSec": 18090,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-04",
+          "TRIP-R03-05",
+          "TRIP-R03-06",
+          "TRIP-R03-07"
+        ]
+      },
+      {
+        "orderId": "ORD-070",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 7335,
+        "originalDueSec": 11535,
+        "dueSec": 18135,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-04",
+          "TRIP-R04-05",
+          "TRIP-R04-06",
+          "TRIP-R04-07"
+        ]
+      },
+      {
+        "orderId": "ORD-071",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 7380,
+        "originalDueSec": 10380,
+        "dueSec": 14580,
+        "leadSec": 7200,
+        "adjustmentSec": 4200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-04",
+          "TRIP-R05-05"
+        ]
+      },
+      {
+        "orderId": "ORD-072",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 7425,
+        "originalDueSec": 11625,
+        "dueSec": 19425,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-05",
+          "TRIP-R06-06",
+          "TRIP-R06-07"
+        ]
+      },
+      {
+        "orderId": "ORD-073",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9600,
+        "originalDueSec": 13800,
+        "dueSec": 20400,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-06",
+          "TRIP-R01-07",
+          "TRIP-R01-08"
+        ]
+      },
+      {
+        "orderId": "ORD-074",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9645,
+        "originalDueSec": 13845,
+        "dueSec": 20445,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-06",
+          "TRIP-R02-07",
+          "TRIP-R02-08"
+        ]
+      },
+      {
+        "orderId": "ORD-075",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9690,
+        "originalDueSec": 13890,
+        "dueSec": 20490,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-05",
+          "TRIP-R03-06",
+          "TRIP-R03-07",
+          "TRIP-R03-08"
+        ]
+      },
+      {
+        "orderId": "ORD-076",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9735,
+        "originalDueSec": 12735,
+        "dueSec": 20535,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-05",
+          "TRIP-R04-06",
+          "TRIP-R04-07",
+          "TRIP-R04-08"
+        ]
+      },
+      {
+        "orderId": "ORD-077",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 2,
+        "releaseSec": 9780,
+        "originalDueSec": 13980,
+        "dueSec": 25380,
+        "leadSec": 15600,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-06",
+          "TRIP-R05-07",
+          "TRIP-R05-08",
+          "TRIP-R05-09",
+          "TRIP-R05-10"
+        ]
+      },
+      {
+        "orderId": "ORD-078",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 9825,
+        "originalDueSec": 14025,
+        "dueSec": 17025,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-05",
+          "TRIP-R06-06"
+        ]
+      },
+      {
+        "orderId": "ORD-079",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9600,
+        "originalDueSec": 13800,
+        "dueSec": 20400,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-06",
+          "TRIP-R01-07",
+          "TRIP-R01-08"
+        ]
+      },
+      {
+        "orderId": "ORD-080",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9645,
+        "originalDueSec": 13845,
+        "dueSec": 20445,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-06",
+          "TRIP-R02-07",
+          "TRIP-R02-08"
+        ]
+      },
+      {
+        "orderId": "ORD-081",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9690,
+        "originalDueSec": 12690,
+        "dueSec": 20490,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-05",
+          "TRIP-R03-06",
+          "TRIP-R03-07",
+          "TRIP-R03-08"
+        ]
+      },
+      {
+        "orderId": "ORD-082",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 9735,
+        "originalDueSec": 13935,
+        "dueSec": 21735,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-06",
+          "TRIP-R04-07",
+          "TRIP-R04-08"
+        ]
+      },
+      {
+        "orderId": "ORD-083",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9780,
+        "originalDueSec": 13980,
+        "dueSec": 20580,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-05",
+          "TRIP-R05-06",
+          "TRIP-R05-07",
+          "TRIP-R05-08"
+        ]
+      },
+      {
+        "orderId": "ORD-084",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9825,
+        "originalDueSec": 14025,
+        "dueSec": 20625,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-05",
+          "TRIP-R06-06",
+          "TRIP-R06-07",
+          "TRIP-R06-08"
+        ]
+      },
+      {
+        "orderId": "ORD-085",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 9600,
+        "originalDueSec": 13800,
+        "dueSec": 16800,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-05",
+          "TRIP-R01-06",
+          "TRIP-R01-07"
+        ]
+      },
+      {
+        "orderId": "ORD-086",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 9645,
+        "originalDueSec": 12645,
+        "dueSec": 24045,
+        "leadSec": 14400,
+        "adjustmentSec": 11400,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-06",
+          "TRIP-R02-07",
+          "TRIP-R02-08",
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-087",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 9690,
+        "originalDueSec": 13890,
+        "dueSec": 21690,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-06",
+          "TRIP-R03-07",
+          "TRIP-R03-08",
+          "TRIP-R03-09"
+        ]
+      },
+      {
+        "orderId": "ORD-088",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9735,
+        "originalDueSec": 13935,
+        "dueSec": 20535,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-05",
+          "TRIP-R04-06",
+          "TRIP-R04-07",
+          "TRIP-R04-08"
+        ]
+      },
+      {
+        "orderId": "ORD-089",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9780,
+        "originalDueSec": 13980,
+        "dueSec": 20580,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-05",
+          "TRIP-R05-06",
+          "TRIP-R05-07",
+          "TRIP-R05-08"
+        ]
+      },
+      {
+        "orderId": "ORD-090",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 9825,
+        "originalDueSec": 14025,
+        "dueSec": 20625,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-05",
+          "TRIP-R06-06",
+          "TRIP-R06-07",
+          "TRIP-R06-08"
+        ]
+      },
+      {
+        "orderId": "ORD-091",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12000,
+        "originalDueSec": 15000,
+        "dueSec": 22800,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-07",
+          "TRIP-R01-08",
+          "TRIP-R01-09"
+        ]
+      },
+      {
+        "orderId": "ORD-092",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 12045,
+        "originalDueSec": 16245,
+        "dueSec": 24045,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-07",
+          "TRIP-R02-08",
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-093",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12090,
+        "originalDueSec": 16290,
+        "dueSec": 22890,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-07",
+          "TRIP-R03-08",
+          "TRIP-R03-09"
+        ]
+      },
+      {
+        "orderId": "ORD-094",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12135,
+        "originalDueSec": 16335,
+        "dueSec": 22935,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-06",
+          "TRIP-R04-07",
+          "TRIP-R04-08",
+          "TRIP-R04-09"
+        ]
+      },
+      {
+        "orderId": "ORD-095",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 12180,
+        "originalDueSec": 16380,
+        "dueSec": 26580,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-07",
+          "TRIP-R05-08",
+          "TRIP-R05-09",
+          "TRIP-R05-10"
+        ]
+      },
+      {
+        "orderId": "ORD-096",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12225,
+        "originalDueSec": 15225,
+        "dueSec": 23025,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-06",
+          "TRIP-R06-07",
+          "TRIP-R06-08",
+          "TRIP-R06-09"
+        ]
+      },
+      {
+        "orderId": "ORD-097",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 12000,
+        "originalDueSec": 16200,
+        "dueSec": 24000,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-07",
+          "TRIP-R01-08",
+          "TRIP-R01-09",
+          "TRIP-R01-10"
+        ]
+      },
+      {
+        "orderId": "ORD-098",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12045,
+        "originalDueSec": 16245,
+        "dueSec": 22845,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-07",
+          "TRIP-R02-08",
+          "TRIP-R02-09"
+        ]
+      },
+      {
+        "orderId": "ORD-099",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 12090,
+        "originalDueSec": 16290,
+        "dueSec": 19290,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-06",
+          "TRIP-R03-07"
+        ]
+      },
+      {
+        "orderId": "ORD-100",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12135,
+        "originalDueSec": 16335,
+        "dueSec": 22935,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-06",
+          "TRIP-R04-07",
+          "TRIP-R04-08",
+          "TRIP-R04-09"
+        ]
+      },
+      {
+        "orderId": "ORD-101",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12180,
+        "originalDueSec": 15180,
+        "dueSec": 22980,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-06",
+          "TRIP-R05-07",
+          "TRIP-R05-08",
+          "TRIP-R05-09"
+        ]
+      },
+      {
+        "orderId": "ORD-102",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 12225,
+        "originalDueSec": 16425,
+        "dueSec": 24225,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-07",
+          "TRIP-R06-08",
+          "TRIP-R06-09"
+        ]
+      },
+      {
+        "orderId": "ORD-103",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12000,
+        "originalDueSec": 16200,
+        "dueSec": 22800,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-07",
+          "TRIP-R01-08",
+          "TRIP-R01-09"
+        ]
+      },
+      {
+        "orderId": "ORD-104",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 12045,
+        "originalDueSec": 16245,
+        "dueSec": 26445,
+        "leadSec": 14400,
+        "adjustmentSec": 10200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-07",
+          "TRIP-R02-08",
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-105",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12090,
+        "originalDueSec": 16290,
+        "dueSec": 22890,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-07",
+          "TRIP-R03-08",
+          "TRIP-R03-09"
+        ]
+      },
+      {
+        "orderId": "ORD-106",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 12135,
+        "originalDueSec": 15135,
+        "dueSec": 19335,
+        "leadSec": 7200,
+        "adjustmentSec": 4200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-06",
+          "TRIP-R04-07"
+        ]
+      },
+      {
+        "orderId": "ORD-107",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 12180,
+        "originalDueSec": 16380,
+        "dueSec": 24180,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-07",
+          "TRIP-R05-08",
+          "TRIP-R05-09"
+        ]
+      },
+      {
+        "orderId": "ORD-108",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 12225,
+        "originalDueSec": 16425,
+        "dueSec": 23025,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-06",
+          "TRIP-R06-07",
+          "TRIP-R06-08",
+          "TRIP-R06-09"
+        ]
+      },
+      {
+        "orderId": "ORD-109",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14400,
+        "originalDueSec": 18600,
+        "dueSec": 25200,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-08",
+          "TRIP-R01-09",
+          "TRIP-R01-10"
+        ]
+      },
+      {
+        "orderId": "ORD-110",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14445,
+        "originalDueSec": 18645,
+        "dueSec": 25245,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-08",
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-111",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14490,
+        "originalDueSec": 17490,
+        "dueSec": 25290,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-08",
+          "TRIP-R03-09",
+          "TRIP-R03-10"
+        ]
+      },
+      {
+        "orderId": "ORD-112",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 14535,
+        "originalDueSec": 18735,
+        "dueSec": 26535,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-08",
+          "TRIP-R04-09",
+          "TRIP-R04-10"
+        ]
+      },
+      {
+        "orderId": "ORD-113",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 14580,
+        "originalDueSec": 18780,
+        "dueSec": 21780,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-07",
+          "TRIP-R05-08"
+        ]
+      },
+      {
+        "orderId": "ORD-114",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14625,
+        "originalDueSec": 18825,
+        "dueSec": 25425,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-07",
+          "TRIP-R06-08",
+          "TRIP-R06-09",
+          "TRIP-R06-10"
+        ]
+      },
+      {
+        "orderId": "ORD-115",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14400,
+        "originalDueSec": 18600,
+        "dueSec": 25200,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-08",
+          "TRIP-R01-09",
+          "TRIP-R01-10"
+        ]
+      },
+      {
+        "orderId": "ORD-116",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14445,
+        "originalDueSec": 17445,
+        "dueSec": 25245,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-08",
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-117",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 14490,
+        "originalDueSec": 18690,
+        "dueSec": 26490,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-08",
+          "TRIP-R03-09",
+          "TRIP-R03-10"
+        ]
+      },
+      {
+        "orderId": "ORD-118",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14535,
+        "originalDueSec": 18735,
+        "dueSec": 25335,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-08",
+          "TRIP-R04-09",
+          "TRIP-R04-10"
+        ]
+      },
+      {
+        "orderId": "ORD-119",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14580,
+        "originalDueSec": 18780,
+        "dueSec": 25380,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-07",
+          "TRIP-R05-08",
+          "TRIP-R05-09",
+          "TRIP-R05-10"
+        ]
+      },
+      {
+        "orderId": "ORD-120",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 14625,
+        "originalDueSec": 18825,
+        "dueSec": 21825,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-07",
+          "TRIP-R06-08"
+        ]
+      },
+      {
+        "orderId": "ORD-121",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14400,
+        "originalDueSec": 17400,
+        "dueSec": 25200,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-08",
+          "TRIP-R01-09",
+          "TRIP-R01-10"
+        ]
+      },
+      {
+        "orderId": "ORD-122",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 2,
+        "releaseSec": 14445,
+        "originalDueSec": 18645,
+        "dueSec": 28800,
+        "leadSec": 15600,
+        "adjustmentSec": 10155,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-123",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14490,
+        "originalDueSec": 18690,
+        "dueSec": 25290,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-08",
+          "TRIP-R03-09",
+          "TRIP-R03-10"
+        ]
+      },
+      {
+        "orderId": "ORD-124",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14535,
+        "originalDueSec": 18735,
+        "dueSec": 25335,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-08",
+          "TRIP-R04-09",
+          "TRIP-R04-10"
+        ]
+      },
+      {
+        "orderId": "ORD-125",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14580,
+        "originalDueSec": 18780,
+        "dueSec": 25380,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-07",
+          "TRIP-R05-08",
+          "TRIP-R05-09",
+          "TRIP-R05-10"
+        ]
+      },
+      {
+        "orderId": "ORD-126",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 14625,
+        "originalDueSec": 17625,
+        "dueSec": 25425,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-07",
+          "TRIP-R06-08",
+          "TRIP-R06-09",
+          "TRIP-R06-10"
+        ]
+      },
+      {
+        "orderId": "ORD-127",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 16800,
+        "originalDueSec": 21000,
+        "dueSec": 28800,
+        "leadSec": 12000,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-09",
+          "TRIP-R01-10"
+        ]
+      },
+      {
+        "orderId": "ORD-128",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 16845,
+        "originalDueSec": 21045,
+        "dueSec": 27645,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-129",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 16890,
+        "originalDueSec": 21090,
+        "dueSec": 27690,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-09",
+          "TRIP-R03-10"
+        ]
+      },
+      {
+        "orderId": "ORD-130",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 16935,
+        "originalDueSec": 21135,
+        "dueSec": 27735,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-09",
+          "TRIP-R04-10"
+        ]
+      },
+      {
+        "orderId": "ORD-131",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 16980,
+        "originalDueSec": 19980,
+        "dueSec": 28800,
+        "leadSec": 14400,
+        "adjustmentSec": 8820,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R05-09",
+          "TRIP-R05-10"
+        ]
+      },
+      {
+        "orderId": "ORD-132",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 17025,
+        "originalDueSec": 21225,
+        "dueSec": 28800,
+        "leadSec": 12000,
+        "adjustmentSec": 7575,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R06-09",
+          "TRIP-R06-10"
+        ]
+      },
+      {
+        "orderId": "ORD-133",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 16800,
+        "originalDueSec": 21000,
+        "dueSec": 27600,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-09",
+          "TRIP-R01-10"
+        ]
+      },
+      {
+        "orderId": "ORD-134",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 16845,
+        "originalDueSec": 21045,
+        "dueSec": 24045,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R02-08",
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-135",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 16890,
+        "originalDueSec": 21090,
+        "dueSec": 27690,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-09",
+          "TRIP-R03-10"
+        ]
+      },
+      {
+        "orderId": "ORD-136",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 16935,
+        "originalDueSec": 19935,
+        "dueSec": 27735,
+        "leadSec": 10800,
+        "adjustmentSec": 7800,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-09",
+          "TRIP-R04-10"
+        ]
+      },
+      {
+        "orderId": "ORD-137",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 16980,
+        "originalDueSec": 21180,
+        "dueSec": 28800,
+        "leadSec": 12000,
+        "adjustmentSec": 7620,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R05-09",
+          "TRIP-R05-10"
+        ]
+      },
+      {
+        "orderId": "ORD-138",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 17025,
+        "originalDueSec": 21225,
+        "dueSec": 27825,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-08",
+          "TRIP-R06-09",
+          "TRIP-R06-10"
+        ]
+      },
+      {
+        "orderId": "ORD-139",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 16800,
+        "originalDueSec": 21000,
+        "dueSec": 27600,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R01-09",
+          "TRIP-R01-10"
+        ]
+      },
+      {
+        "orderId": "ORD-140",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 16845,
+        "originalDueSec": 21045,
+        "dueSec": 28800,
+        "leadSec": 14400,
+        "adjustmentSec": 7755,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R02-09",
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-141",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 16890,
+        "originalDueSec": 19890,
+        "dueSec": 24090,
+        "leadSec": 7200,
+        "adjustmentSec": 4200,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R03-08",
+          "TRIP-R03-09",
+          "TRIP-R03-10"
+        ]
+      },
+      {
+        "orderId": "ORD-142",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 16935,
+        "originalDueSec": 21135,
+        "dueSec": 28800,
+        "leadSec": 12000,
+        "adjustmentSec": 7665,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R04-09",
+          "TRIP-R04-10"
+        ]
+      },
+      {
+        "orderId": "ORD-143",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 16980,
+        "originalDueSec": 21180,
+        "dueSec": 27780,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R05-08",
+          "TRIP-R05-09",
+          "TRIP-R05-10"
+        ]
+      },
+      {
+        "orderId": "ORD-144",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 17025,
+        "originalDueSec": 21225,
+        "dueSec": 27825,
+        "leadSec": 10800,
+        "adjustmentSec": 6600,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R06-08",
+          "TRIP-R06-09",
+          "TRIP-R06-10"
+        ]
+      },
+      {
+        "orderId": "ORD-145",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 19200,
+        "originalDueSec": 23400,
+        "dueSec": 28800,
+        "leadSec": 10800,
+        "adjustmentSec": 5400,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R01-10"
+        ]
+      },
+      {
+        "orderId": "ORD-146",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 19245,
+        "originalDueSec": 22245,
+        "dueSec": 28800,
+        "leadSec": 10800,
+        "adjustmentSec": 6555,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R02-10"
+        ]
+      },
+      {
+        "orderId": "ORD-147",
+        "complexity": "MIXED",
+        "palletCount": 2,
+        "releaseSec": 19290,
+        "originalDueSec": 23490,
+        "dueSec": 28800,
+        "leadSec": 12000,
+        "adjustmentSec": 5310,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R03-10"
+        ]
+      },
+      {
+        "orderId": "ORD-148",
+        "complexity": "WHOLE",
+        "palletCount": 1,
+        "releaseSec": 19335,
+        "originalDueSec": 23535,
+        "dueSec": 26535,
+        "leadSec": 7200,
+        "adjustmentSec": 3000,
+        "allowanceExceedsShift": false,
+        "feasibleTripIds": [
+          "TRIP-R04-09",
+          "TRIP-R04-10"
+        ]
+      },
+      {
+        "orderId": "ORD-149",
+        "complexity": "MULTI_SOURCE",
+        "palletCount": 1,
+        "releaseSec": 19380,
+        "originalDueSec": 23580,
+        "dueSec": 28800,
+        "leadSec": 14400,
+        "adjustmentSec": 5220,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R05-10"
+        ]
+      },
+      {
+        "orderId": "ORD-150",
+        "complexity": "MIXED",
+        "palletCount": 1,
+        "releaseSec": 19425,
+        "originalDueSec": 23625,
+        "dueSec": 28800,
+        "leadSec": 10800,
+        "adjustmentSec": 5175,
+        "allowanceExceedsShift": true,
+        "feasibleTripIds": [
+          "TRIP-R06-09",
+          "TRIP-R06-10"
+        ]
+      }
+    ]
+  }
+}

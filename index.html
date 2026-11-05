@@ -1,10 +1,331 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WinMart V6.1 — Điều phối kho 5.000 m² (Kệ 3 tầng · Đa Dock · Hỗ trợ chéo)</title><link rel="stylesheet" href="./styles.css"></head><body>
-<header><h1>Điều phối kho WinMart <span>V6.1</span></h1><p>Phân khu 5.000 m² · Kệ 3 tầng (1.764 vị trí) · 6 xe nâng XN (hỗ trợ chéo A⇄B) · 4 robot CP · 12 dock xuất</p></header>
-<main><section aria-label="Điều khiển" class="controls"><label>Kịch bản <select id="scenario"><option value="base">Xuất 8 giờ cơ sở (Đa dock + Hỗ trợ chéo)</option><option value="nocross">Tắt hỗ trợ chéo A⇄B</option><option value="slow">Thao tác nhân công chậm +25%</option><option value="inbound">Ca nhập 8 giờ (2 luồng kiểm nhận)</option><option value="cycle">Nhiều ca liên tục 40 giờ</option><option value="late">Xe xuất trễ 2 giờ</option><option value="charge">Bắt đầu với 15% pin</option><option value="low">Thiếu tồn kho đầu ca</option><option value="stage">Bắt buộc qua chờ xuất</option></select></label><button id="reset">Đặt lại kịch bản</button><button id="play" class="primary">Chạy</button><button id="step">Tiến 5 phút</button><button id="shift">Yêu cầu chuyển ca</button><label>Tốc độ <select id="speed"><option value="10">10×</option><option value="60" selected>60×</option><option value="300">300×</option></select></label></section>
-<div id="status" role="status" aria-live="polite"></div><p class="note">Mô phỏng điều phối theo giây trên hành lang chính 2 chiều tách biệt XN/CP, nối chuyến trực tiếp không chạy rỗng về bến và tự chất hàng đồng thời trên dải 12 dock xuất.</p>
-<section class="metrics" id="metrics" aria-label="Sản lượng"></section>
-<section class="workspace"><div><div class="section-head"><h2>Mặt bằng và vị trí thiết bị</h2><button id="zoom" aria-pressed="false">Phóng to bản đồ</button><label>Chọn xe <select id="robot"></select></label><button id="fault">Gây lỗi xe</button><button id="recover">Phục hồi xe</button></div><div class="map-wrap"><canvas id="map" width="1180" height="750" aria-label="Bản đồ kho 5.000 m² với xe nâng, robot và 12 dock xuất"></canvas></div><p class="legend">Cam: xe nâng XN (kệ 3 tầng, hỗ trợ chéo A⇄B) · Xanh: robot CP · Đỏ: xe dừng lỗi · Chấm đậm: ô có pallet · Vòng tròn: ô đã đặt chỗ</p></div>
-<aside><h2>Dải 12 Dock xuất</h2><div id="truck"></div><h2>10 Ô ghép (4 đội)</h2><div id="cells"></div><p>Trống / Chuẩn bị / Đang ghép / Hoàn tất. 6 ô đệm nạp gối đầu nguồn giúp 4 đội làm việc liên tục.</p><h2>Mức chiếm dụng ô</h2><div id="occupancy"></div><button id="export">Tải trạng thái JSON</button></aside></section>
-<section><h2>Thời gian, công việc và hỗ trợ chéo từng xe</h2><div class="table-wrap"><table><thead><tr><th>Xe</th><th>Trạng thái</th><th>Công việc</th><th>Pin</th><th>Làm việc (phút)</th><th>Sạc (phút)</th><th>Chờ (phút)</th><th>Chuyến chéo A⇄B</th></tr></thead><tbody id="robots"></tbody></table></div></section>
-<section class="details"><div><h2>Luồng nhập và ghép</h2><a href="./Khu_nguon_ghep.svg" target="_blank" rel="noopener">Xem lớn sơ đồ nguồn và ghép</a><img src="./Khu_nguon_ghep.svg" alt="Hai hàng gồm 20 ô nguồn và 10 ô thành phẩm với hành lang robot tách biệt"><a href="./Khu_nhap.svg" target="_blank" rel="noopener">Xem lớn sơ đồ khu nhập</a><img src="./Khu_nhap.svg" alt="Dỡ xe nhập tuần tự, 2 luồng kiểm nhận song song vào 4 ô IN0–IN3"></div><div><h2>Robot tự chất xe đa dock</h2><a href="./Chat_xe.svg" target="_blank" rel="noopener">Xem lớn sơ đồ chất thùng xe</a><img src="./Chat_xe.svg" alt="Bốn pallet chất từ đầu thùng ra cửa trên dải 12 dock xuất"><p>Dải 12 dock xuất xếp hàng đồng thời theo tuyến. Mỗi thùng chỉ cho phép 1 robot vào tại một thời điểm; lùi khỏi cửa là giải phóng khóa dock và nối ngay nhiệm vụ kế tiếp.</p><h2>Nhật ký điều phối gần nhất</h2><ol id="log"></ol></div></section>
-<footer>Mô phỏng học thuật phục vụ đồ án Quản lý dự án CNTT — Phân khu kho 5.000 m² WinMart (V6.1). Tương thích triển khai tĩnh trực tiếp trên GitHub Pages.</footer></main><script type="module" src="./app.js"></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WinMart V6.2 — Hệ thống Mô phỏng &amp; Lập kế hoạch Điều phối Kho 5.000 m²</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b5cab'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='15' font-weight='bold' fill='white' text-anchor='middle'%3EWM%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-main">
+      <div>
+        <div class="eyebrow">ĐỒ ÁN QUẢN LÝ DỰ ÁN CNTT · MÔ HÌNH ĐIỀU PHỐI KHO KHÔ TRONG NHÀ 5.000 M²</div>
+        <h1>Điều phối Kho WinMart <span class="ver-badge">V6.2</span></h1>
+        <p class="subtitle">Kệ 3 tầng (1.764 ô) · 6 xe nâng XN1–XN6 · 4 robot CP1–CP4 · 10 cụm ghép nhiều đợt + QC · 12 dock xuất đa chuyến · Cứu hộ cục bộ &amp; Nhập/Xuất Excel</p>
+      </div>
+      <div class="header-meta" id="hashBadge" title="Mã băm SHA-256 xác định (deterministic) trên trạng thái chuẩn hóa">
+        <span class="meta-label">Chế độ điều phối</span>
+        <strong id="policyBadgeText">V6_2_PROPOSED · WINDOW_FEFO</strong>
+        <small id="hashText">SHA-256: sẵn sàng kiểm chứng</small>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- BƯỚC 1: KỊCH BẢN, THAM SỐ CẤU HÌNH & NHẬP EXCEL CA XUẤT (t = 0) -->
+    <section class="panel workflow-bar" aria-label="Bước 1: Chọn kịch bản hoặc nhập kế hoạch Excel ca xuất">
+      <div class="workflow-grid">
+        <div class="wf-group">
+          <span class="step-tag">Bước 1 · Nguồn kịch bản &amp; Cấu hình phiên mới (t = 0)</span>
+          <div class="control-row">
+            <label for="scenario">Kịch bản chuẩn
+              <select id="scenario">
+                <option value="base">1. Ca xuất 8 giờ chuẩn V6.2 (Phương án đề xuất)</option>
+                <option value="baseline_b">2. Ca xuất 8 giờ cơ sở đối chứng (Phương án cơ sở · FIFO + Strict FEFO)</option>
+                <option value="excel_std">3. Kế hoạch Excel mẫu chuẩn (66 đơn · 6 tuyến · 30 chuyến)</option>
+                <option value="excel_full">4. Kế hoạch Excel tải cao 8 giờ (150 đơn · 60 chuyến)</option>
+                <option value="nocross">5. Tắt hỗ trợ chéo vùng kệ A ⇄ B</option>
+                <option value="skew80">6. Lệch nhu cầu mặt hàng Vùng A (80% A / 20% B)</option>
+                <option value="slow">7. Thao tác nhân công chậm +25% (ghép, QC, kiểm nhận)</option>
+                <option value="inbound">8. Ca nhập độc lập 8 giờ (2 luồng kiểm nhận song song)</option>
+                <option value="cycle">9. Vận hành liên hoàn 5 ca 40 giờ (Nhập ⇄ Xuất + Bàn giao ca)</option>
+                <option value="charge">10. Khởi đầu ca với 15% pin (Sạc cân bằng XN/CP)</option>
+                <option value="low">11. Thiếu tồn kho đầu ca (Chế độ cảnh báo thiếu hụt trung thực)</option>
+                <option value="stage">12. Bắt buộc qua ô chờ xuất ST (Tắt nạp thẳng G → Xe)</option>
+                <option value="fault_detour">13. Sự cố xe trên hành lang + Đi vòng &amp; Giao lại tự động</option>
+                <option value="fault_dock">14. Sự cố robot trong thùng xe + Cứu hộ cơ–điện F3</option>
+              </select>
+            </label>
+
+            <label for="policySelect">Chính sách
+              <select id="policySelect">
+                <option value="V6_2_PROPOSED" selected>Phương án đề xuất: V6_2_PROPOSED</option>
+                <option value="V6_2_BASELINE">Phương án cơ sở: V6_2_BASELINE (FIFO cơ sở)</option>
+              </select>
+            </label>
+
+            <label for="fefoSelect">FEFO
+              <select id="fefoSelect">
+                <option value="WINDOW_FEFO" selected>WINDOW_FEFO (14 ngày)</option>
+                <option value="STRICT_FEFO">STRICT_FEFO (Hạn sớm nhất)</option>
+              </select>
+            </label>
+
+            <label for="xnCountSelect" title="Số xe nâng tầm cao XN hoạt động">XN
+              <select id="xnCountSelect">
+                <option value="6" selected>6 xe</option>
+                <option value="5">5 xe</option>
+                <option value="4">4 xe</option>
+              </select>
+            </label>
+
+            <label for="cpCountSelect" title="Số robot pallet thấp CP hoạt động">CP
+              <select id="cpCountSelect">
+                <option value="4" selected>4 robot</option>
+                <option value="3">3 robot</option>
+                <option value="2">2 robot</option>
+              </select>
+            </label>
+
+            <label for="dockCountSelect" title="Số cửa dock xuất mở hoạt động">Dock xuất
+              <select id="dockCountSelect">
+                <option value="12" selected>12 cửa</option>
+                <option value="9">9 cửa</option>
+                <option value="6">6 cửa</option>
+              </select>
+            </label>
+
+            <button id="reset" class="btn-secondary">Khởi tạo lại phiên (t = 0)</button>
+          </div>
+        </div>
+
+        <div class="wf-group excel-box">
+          <span class="step-tag">Nhập / Xuất Kế hoạch Ca Xuất Excel (.xlsx · 6 sheet)</span>
+          <div class="control-row">
+            <button id="downloadStdTpl" type="button">Tải mẫu Excel chuẩn</button>
+            <button id="downloadFullTpl" type="button">Tải mẫu tải cao 8h</button>
+            <label class="file-upload-btn" id="uploadLabel">
+              <span>Tải lên kế hoạch (.xlsx)</span>
+              <input type="file" id="excelInput" accept=".xlsx,.xls" hidden>
+            </label>
+            <button id="exportExcelBtn" type="button" class="btn-accent">Xuất kết quả (.xlsx)</button>
+            <button id="exportJsonBtn" type="button">JSON + SHA-256</button>
+          </div>
+          <small class="hint-line">Phạm vi V6.2: chỉ nạp kế hoạch <strong>ca xuất</strong> khi khởi tạo phiên mới (t = 0); giữ an toàn dữ liệu khi ca đang chạy.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- BƯỚC 2 & 3: KIỂM ĐỊNH DỮ LIỆU EXCEL & XEM TRƯỚC KẾ HOẠCH TRƯỚC KHI CHẠY -->
+    <section id="excelReviewPanel" class="panel excel-review hidden" aria-label="Kiểm định dữ liệu và xem trước kế hoạch ca xuất">
+      <div class="section-head">
+        <div>
+          <span class="step-tag">Bước 2 &amp; 3 · Kiểm định cấu trúc dòng/cột &amp; Xem trước kế hoạch ca xuất</span>
+          <h2 id="excelFileTitle"> Tệp kế hoạch vừa kiểm tra</h2>
+        </div>
+        <div class="control-row">
+          <span id="excelValidBadge" class="badge">Đang kiểm tra</span>
+          <button id="applyExcelPlanBtn" type="button" class="primary">Áp dụng kế hoạch &amp; Khởi tạo phiên mới (t = 0)</button>
+          <button id="closeExcelPanelBtn" type="button">Thu gọn</button>
+        </div>
+      </div>
+      <div id="excelPreviewCards" class="preview-cards"></div>
+      <div id="excelRouteSummary" class="route-summary"></div>
+      <div id="excelIssuesWrap" class="issues-wrap hidden">
+        <h3>Chi tiết lỗi cấu trúc chặn chạy (ERROR) &amp; Cảnh báo nghiệp vụ (WARNING)</h3>
+        <div class="table-wrap compact-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Mức độ</th>
+                <th>Sheet</th>
+                <th>Dòng</th>
+                <th>Cột</th>
+                <th>Mã kiểm tra</th>
+                <th>Mô tả &amp; Hướng xử lý</th>
+              </tr>
+            </thead>
+            <tbody id="excelIssuesBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- BƯỚC 4: THANH ĐIỀU HÀNH MÔ PHỎNG & CHẠY NHANH WEB WORKER -->
+    <section class="panel playback-bar" aria-label="Bước 4: Điều hành mô phỏng trực quan và chạy nhanh">
+      <div class="control-row">
+        <button id="play" class="primary" type="button">Chạy trực quan</button>
+        <button id="step" type="button">Tiến 5 phút</button>
+        <label for="speed">Tốc độ
+          <select id="speed">
+            <option value="1">1× (Thực)</option>
+            <option value="15">15×</option>
+            <option value="60" selected>60×</option>
+            <option value="240">240×</option>
+          </select>
+        </label>
+        <button id="fastRunBtn" type="button" class="btn-secondary">Chạy nhanh hết ca (Worker)</button>
+        <button id="compareBtn" type="button" class="btn-accent">Đối chứng cơ sở và đề xuất</button>
+        <button id="cancelWorkerBtn" type="button" class="btn-danger hidden">Hủy tác vụ chạy nhanh</button>
+        <button id="shift" type="button">Yêu cầu chuyển ca</button>
+      </div>
+
+      <div id="workerProgressWrap" class="worker-progress hidden" role="status" aria-live="polite">
+        <div class="progress-track"><div id="workerProgressBar" class="progress-fill" style="width:0%"></div></div>
+        <span id="workerProgressText">Đang khởi tạo Web Worker...</span>
+      </div>
+
+      <div id="status" class="status-strip" role="status" aria-live="polite"></div>
+      <div id="alertStack" class="alert-stack" aria-live="polite"></div>
+    </section>
+
+    <!-- KPI TỔNG HỢP THEO THỜI GIAN THỰC -->
+    <section class="metrics" id="metrics" aria-label="Chỉ số vận hành kho theo thời gian thực"></section>
+
+    <!-- BẢNG ĐỐI CHỨNG KHOA HỌC MỐC B VS MỐC C (HIỆN KHI CHẠY ĐỐI CHỨNG) -->
+    <section id="comparePanel" class="panel hidden" aria-label="Bước 5: Đối chứng thực nghiệm cơ sở và đề xuất">
+      <div class="section-head">
+        <div>
+          <span class="step-tag">Bước 5 · Đối chiếu kết quả trên cùng đầu vào &amp; hạt giống xác định</span>
+          <h2>So sánh Phương án cơ sở (V6_2_BASELINE) và Phương án đề xuất (V6_2_PROPOSED)</h2>
+        </div>
+        <button id="closeCompareBtn" type="button">Đóng bảng đối chứng</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Chỉ tiêu đo lường</th>
+              <th>Phương án cơ sở (FIFO + STRICT_FEFO)</th>
+              <th>Phương án đề xuất (Hạn có trọng số + WINDOW_FEFO)</th>
+              <th>Chênh lệch đề xuất so với cơ sở</th>
+            </tr>
+          </thead>
+          <tbody id="compareTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- KHÔNG GIAN MẶT BẰNG TRỰC QUAN 5.000 M² & CỘT GIÁM SÁT BẾN / Ô GHÉP -->
+    <section class="workspace">
+      <div class="map-column">
+        <div class="panel map-toolbar">
+          <div class="section-head tight">
+            <h2>Mặt bằng Điều phối 5.000 m² &amp; Xử lý Sự cố Cục bộ</h2>
+            <button id="zoom" type="button" aria-pressed="false">Phóng to bản đồ</button>
+          </div>
+          <div class="incident-controls">
+            <label for="robot">Thiết bị
+              <select id="robot"></select>
+            </label>
+            <label for="faultMode">Chế độ lỗi
+              <select id="faultMode">
+                <option value="IN_PLACE">Sửa tại chỗ (IN_PLACE · Cô lập cục bộ)</option>
+                <option value="TOW_TO_MAINT" selected>Cần cứu hộ về khu sửa chữa (TOW_TO_MAINT · F3)</option>
+              </select>
+            </label>
+            <button id="fault" type="button" class="btn-warn">Gây lỗi thiết bị</button>
+            <button id="rescueBtn" type="button" class="btn-accent">Xác nhận cứu hộ (F3)</button>
+            <button id="recover" type="button">Phục hồi kỹ thuật</button>
+            <label for="estopZone">Vùng E-STOP
+              <select id="estopZone">
+                <option value="ALL">Toàn kho</option>
+                <option value="DOCK">Khu Dock (y &lt; 12,5m)</option>
+                <option value="A">Khu kệ Vùng A</option>
+                <option value="B">Khu kệ Vùng B</option>
+              </select>
+            </label>
+            <button id="estopBtn" type="button" class="btn-danger" aria-pressed="false">Kích hoạt E-STOP</button>
+          </div>
+        </div>
+
+        <div class="map-wrap" id="mapWrap">
+          <canvas id="map" width="1180" height="750" aria-label="Bản đồ kho 5.000 m² với xe nâng XN1-XN6, robot CP1-CP4, 10 cụm ghép, 12 dock xuất, bãi chờ xe và khu sửa chữa"></canvas>
+        </div>
+        <p class="legend">
+          <strong>Chú giải trực quan:</strong>
+          <span class="dot rt"></span> Xe nâng XN1–XN6 (kệ 3 tầng, đi vòng trục hậu y = 46,8m) ·
+          <span class="dot cp"></span> Robot CP1–CP4 ·
+          <span class="dot fault"></span> Dừng lỗi / Cô lập cục bộ ·
+          <span class="dot tow"></span> Đang kéo cứu hộ 0,20 m/s về MAINT ·
+          <span class="dot stage"></span> Pallet thực trên sàn/kệ ·
+          Viền đỏ nhấp nháy tại dock: Khóa cứng chèn bánh D2 (<code>DOCK_HOLD_FAULT</code>).
+        </p>
+      </div>
+
+      <aside class="side-column">
+        <div class="panel side-card">
+          <h2>Bãi chờ Yard &amp; 12 Dock xuất</h2>
+          <div id="yardSummary" class="yard-box"></div>
+          <div id="truck" class="dock-list"></div>
+        </div>
+
+        <div class="panel side-card">
+          <h2>10 Cụm ghép nhiều đợt &amp; QC</h2>
+          <div id="cells" class="cells-grid"></div>
+          <p class="small-note">Trống → Chuẩn bị (tối đa 2 nguồn/đợt) → Đang ghép → Đổi đợt (nếu &gt;2 nguồn) → Chờ/Quấn QC (60s) → Hoàn tất.</p>
+        </div>
+
+        <div class="panel side-card">
+          <h2>Trạm sạc cân bằng &amp; Chiếm dụng ô</h2>
+          <div id="chargersBox" class="chargers-box"></div>
+          <div id="occupancy" class="occ-list"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- BẢNG GIÁM SÁT ĐỘI XE 10 THIẾT BỊ -->
+    <section class="panel">
+      <h2>Giám sát Chi tiết Đội thiết bị Tự hành (XN1–XN6 &amp; CP1–CP4)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Thiết bị</th>
+              <th>Trạng thái</th>
+              <th>Nhiệm vụ / Ngữ cảnh vật lý</th>
+              <th>Pin (SOC)</th>
+              <th>Độ cao càng</th>
+              <th>Làm việc (ph)</th>
+              <th>Sạc (ph)</th>
+              <th>Chờ (ph)</th>
+              <th>Lỗi/Cứu hộ (ph)</th>
+              <th>Quãng đường (m)</th>
+              <th>Hỗ trợ chéo</th>
+              <th>Đi vòng / Giao lại</th>
+            </tr>
+          </thead>
+          <tbody id="robots"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TRUY VẾT QUYẾT ĐỊNH ĐIỀU PHỐI & NHẬT KÝ SỰ KIỆN -->
+    <section class="dual-logs">
+      <div class="panel">
+        <h2>Truy vết Lý do Quyết định Điều phối (FEFO · Gán Dock · Đổi lộ trình)</h2>
+        <ol id="decisionLog" class="trace-list"></ol>
+      </div>
+      <div class="panel">
+        <h2>Nhật ký Sự kiện Vận hành &amp; An toàn Gần nhất</h2>
+        <ol id="log" class="trace-list"></ol>
+      </div>
+    </section>
+
+    <!-- SƠ ĐỒ KỸ THUẬT CHI TIẾT ĐỒNG BỘ BÁO CÁO -->
+    <section class="details">
+      <div class="panel">
+        <h2>Sơ đồ kỹ thuật Khu Nguồn – Ghép &amp; Khu Nhập</h2>
+        <a href="Khu_nguon_ghep.svg" target="_blank" rel="noopener">Mở rộng sơ đồ Phân khu Nguồn &amp; Ghép đơn</a>
+        <img src="Khu_nguon_ghep.svg" alt="Phân khu Nguồn và Ghép đơn với 20 ô nguồn N0-N19, 10 ô thành phẩm G0-G9 và hành lang tách biệt XN/CP">
+        <a href="Khu_nhap.svg" target="_blank" rel="noopener">Mở rộng sơ đồ Khu Nhập kiểm nhận</a>
+        <img src="Khu_nhap.svg" alt="Dỡ xe nhập tuần tự, 2 luồng kiểm nhận song song vào 4 ô IN0-IN3">
+      </div>
+      <div class="panel">
+        <h2>Cơ chế Robot tự chất thùng xe &amp; Khóa liên động D2</h2>
+        <a href="Chat_xe.svg" target="_blank" rel="noopener">Mở rộng sơ đồ Tự chất thùng xe trên 12 Dock xuất</a>
+        <img src="Chat_xe.svg" alt="Bốn vị trí pallet trong thùng xe tải, bàn nâng cơ khí 2m và khóa liên động chèn bánh D2">
+        <p class="small-note">Mỗi thùng xe chỉ cho phép tối đa 1 robot CP tiến vào tại một thời điểm (0,25 m/s). Nếu robot dừng lỗi trong thùng, trạng thái <code>DOCK_HOLD_FAULT</code> giữ cứng khóa chèn bánh D2 tới khi tổ cứu hộ F3 rút hàng và đưa thiết bị ra khỏi cửa bến.</p>
+      </div>
+    </section>
+
+    <footer>
+      Hệ thống Mô phỏng Điều phối Kho WinMart V6.2 (5.000 m² trong nhà) — Phục vụ Đồ án Quản lý Dự án CNTT (Trường Đại học Kinh tế Quốc dân). Tổng hợp thực nghiệm đối chứng cơ sở / đề xuất lưu tại <code>data/summary.json</code> và kiểm thử tự động tại <code>data/verification.json</code>.
+    </footer>
+  </main>
+
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

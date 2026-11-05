@@ -1,0 +1,74 @@
+{
+  "synthetic": {
+    "BASELINE": {
+      "departed": 183,
+      "shippedOrders": 169,
+      "shippedOnTime": 88,
+      "totalOrders": 180,
+      "breakdown": {
+        "shippedMixed": 165,
+        "shippedWhole": 18,
+        "shippedMultiWave": 36
+      }
+    },
+    "PROPOSED": {
+      "departed": 195,
+      "shippedOrders": 180,
+      "shippedOnTime": 167,
+      "totalOrders": 180,
+      "breakdown": {
+        "shippedMixed": 177,
+        "shippedWhole": 18,
+        "shippedMultiWave": 15
+      }
+    }
+  },
+  "standard": {
+    "BASELINE": {
+      "departed": 81,
+      "shippedOrders": 66,
+      "shippedOnTime": 10,
+      "totalOrders": 66,
+      "breakdown": {
+        "shippedMixed": 69,
+        "shippedWhole": 12,
+        "shippedMultiWave": 20
+      }
+    },
+    "PROPOSED": {
+      "departed": 81,
+      "shippedOrders": 66,
+      "shippedOnTime": 16,
+      "totalOrders": 66,
+      "breakdown": {
+        "shippedMixed": 69,
+        "shippedWhole": 12,
+        "shippedMultiWave": 12
+      }
+    }
+  },
+  "full_8h": {
+    "BASELINE": {
+      "departed": 143,
+      "shippedOrders": 119,
+      "shippedOnTime": 31,
+      "totalOrders": 150,
+      "breakdown": {
+        "shippedMixed": 120,
+        "shippedWhole": 23,
+        "shippedMultiWave": 37
+      }
+    },
+    "PROPOSED": {
+      "departed": 165,
+      "shippedOrders": 137,
+      "shippedOnTime": 40,
+      "totalOrders": 150,
+      "breakdown": {
+        "shippedMixed": 139,
+        "shippedWhole": 26,
+        "shippedMultiWave": 27
+      }
+    }
+  }
+}

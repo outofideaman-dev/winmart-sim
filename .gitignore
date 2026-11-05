@@ -1,0 +1,8 @@
+# Generated full state dumps and internal document audits are not website assets.
+/data/results.json
+/data/results_v6_1_historical.json
+/data/final_audit.json
+/data/ui_verification.json
+/data/verification_v6_1_historical.json
+/node_modules/
+*.log

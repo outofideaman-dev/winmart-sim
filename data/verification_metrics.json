@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "name": "STRICT_FEFO exhausts earliest lot then uses next lot without counting WINDOW choice",
+      "passed": true
+    },
+    {
+      "name": "WINDOW_FEFO counts a genuine choice while earlier eligible stock remains",
+      "passed": true
+    },
+    {
+      "name": "Failed multi-line allocation does not commit KPI increments or reservations",
+      "passed": true
+    },
+    {
+      "name": "WINDOW_FEFO re-anchors after exhausting early stock and never skips outside the new window",
+      "passed": true
+    },
+    {
+      "name": "QC base norm and slow scenario change human times only",
+      "passed": true
+    }
+  ],
+  "passedChecks": 5,
+  "totalChecks": 5
+}
